@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: '@name@'
+    version: '@version@'
+  datasource:
+    pool-prepared-statements: true
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/${DB_NAME:actuator-sample}?useUnicode=true&characterEncoding=utf8
+    username: ${DB_USERNAME:actuator-sample}
+    password: ${DB_PASSWORD:actuator-sample}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
