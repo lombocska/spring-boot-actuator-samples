@@ -1,4 +1,4 @@
-## Sample for actuator generated endpoints (simple)
+## Sample for actuator generated metrics (simple)
 
 
 This is the very basic scenario. No security at all.

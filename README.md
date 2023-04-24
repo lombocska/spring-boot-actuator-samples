@@ -2,10 +2,13 @@
 
 ## Let's have a case, real-life example
 
+[!video](actuator-simple-no-audio.mov)
+
+
 
 ## Examples
 
-In this repo you can find 2 examples for distributed tracing and latency analysis.
+In this repo you can find 2 examples for monitoring your apps.
 
 "scenario-simple-endpoints" shows how you can use the actuator dependency for getting infos about your app, datasource and os.
 

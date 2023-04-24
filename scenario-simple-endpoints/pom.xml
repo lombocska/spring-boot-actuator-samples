@@ -11,10 +11,10 @@
     </parent>
 
     <groupId>io.lombocska</groupId>
-    <artifactId>simple</artifactId>
+    <artifactId>simple-endpoints</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>simple</name>
-    <description>simple</description>
+    <name>simple-endpoints</name>
+    <description>simple-endpoints</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -60,7 +60,7 @@
     </dependencies>
 
     <build>
-        <finalName>${artifactId}</finalName>
+        <finalName>${project.artifactId}</finalName>
         <defaultGoal>spring-boot:run</defaultGoal>
         <plugins>
             <plugin>

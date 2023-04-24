@@ -15,14 +15,25 @@ services:
 
 # services
 
-  simple:
-    container_name: simple
-    image: lombocska/simple
+  simple-endpoints:
+    container_name: simple-endpoints
+    image: lombocska/simple-endpoints
     environment:
       DB_HOST: actuator-sample
       DB_PORT: 5432
     ports:
       - "8080:8080"
+    networks:
+      - actuator-sample
+
+  simple-metrics:
+    container_name: simple-metrics
+    image: lombocska/simple-metrics
+    environment:
+      DB_HOST: actuator-sample
+      DB_PORT: 5432
+    ports:
+      - "8081:8080"
     networks:
       - actuator-sample
 
