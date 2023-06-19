@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: '@name@'
+    version: '@version@'
+  datasource:
+    pool-prepared-statements: true
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/${DB_NAME:actuator-sample}?useUnicode=true&characterEncoding=utf8
+    username: ${DB_USERNAME:actuator-sample}
+    password: ${DB_PASSWORD:actuator-sample}
+  docker:
+    compose:
+      file: "./docker/docker-compose.yml"
+      profiles.active: "graphite"
+  liquibase:
+    change-log: classpath:config/liquibase/master.xml
+
+management:
+  endpoints.web.exposure.include: "*"
+  graphite:
+    metrics:
+      export:
+        host: ${GRAPHITE_HOST:localhost}
+        port: ${GRAPHITE_PORT:2003}
+        global-prefix: ${spring.application.name}.${RANCHER_ENV:dev}.node-${RANCHER_CONTAINER_INDEX:0}
+        protocol: plaintext
+        step: 10s
+
+server:
+  port: 8084
