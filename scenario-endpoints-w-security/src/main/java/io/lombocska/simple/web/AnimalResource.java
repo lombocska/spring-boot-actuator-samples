@@ -1,6 +1,6 @@
-package io.lombocska.metrics.web;
+package io.lombocska.simple.web;
 
-import io.lombocska.metrics.service.AnimalService;
+import io.lombocska.simple.service.AnimalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
