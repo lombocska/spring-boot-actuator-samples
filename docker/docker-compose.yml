@@ -1,42 +1,51 @@
-version: '3.5'
+version: '3.7'
 
 services:
   postgres:
-    image: postgres:12.1
-    container_name: "actuator-sample"
-    networks:
-      - actuator-sample
+    image: postgres:13.2
+    container_name: "postgres"
     environment:
-      POSTGRES_USER: actuator-sample
-      POSTGRES_PASSWORD: actuator-sample
-      POSTGRES_DB: actuator-sample
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
 
-# services
+  prometheus:
+    image: prom/prometheus:v2.6.1
+    container_name: prometheus
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - 9090:9090
+    #    network_mode: 'host' # to test locally running service -> not for Mac OS
+    profiles:
+      - prometheus
 
-  simple-endpoints:
-    container_name: simple-endpoints
-    image: lombocska/simple-endpoints
+  grafana:
+    image: grafana/grafana:9.2.15
+    container_name: grafana
+    volumes:
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
     environment:
-      DB_HOST: actuator-sample
-      DB_PORT: 5432
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_INSTALL_PLUGINS=grafana-piechart-panel
     ports:
-      - "8080:8080"
-    networks:
-      - actuator-sample
+      - 3000:3000
+#    network_mode: 'host' # to test locally running service -> not for Mac OS
+    profiles:
+      - prometheus
+      - graphite
 
-  simple-metrics:
-    container_name: simple-metrics
-    image: lombocska/simple-metrics
-    environment:
-      DB_HOST: actuator-sample
-      DB_PORT: 5432
+
+  graphite:
+    image: graphiteapp/graphite-statsd
+    container_name: graphite
     ports:
-      - "8081:8080"
-    networks:
-      - actuator-sample
-
-networks:
-  actuator-sample:
-    driver: bridge
+      - "80:80"
+      - "2003:2003"
+    profiles:
+      - graphite

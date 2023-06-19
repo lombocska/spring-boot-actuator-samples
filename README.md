@@ -2,9 +2,6 @@
 
 ## Let's have a case, real-life example
 
-[!video](actuator-simple-no-audio.mov)
-
-
 
 ## Examples
 
