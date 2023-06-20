@@ -5,6 +5,7 @@ This is the very basic scenario. No security at all.
 There are 13 generated endpoints by actuator under localhost:8080/actuator/...
 Docs for the endpoints is [here](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.endpoints).
 
+
 ### Application Information
 
 Enabling git, env and java info in [application.yml](src/main/resources/application.yml),

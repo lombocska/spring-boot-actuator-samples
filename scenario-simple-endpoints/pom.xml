@@ -86,11 +86,11 @@
             <version>1.10.6</version>
         </dependency>
 
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>3.0.4</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>de.codecentric</groupId>-->
+<!--            <artifactId>spring-boot-admin-starter-client</artifactId>-->
+<!--            <version>3.0.4</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>

@@ -1,10 +1,9 @@
-## Sample for actuator generated metrics (simple)
+## Sample for actuator generated metrics (simple) with Graphite and Grafana
 
 
-This is the very basic scenario. No security at all.
-Docs for the metrics is [here]().
+This is the very basic scenario of using actuator with micrometer-graphite and grafana. No security at all.
 
-There are metric names provided by actuator under localhost:8080/actuator/metrics
+There are metric names provided by actuator under localhost:8084/actuator/metrics
 
 #### Example
 

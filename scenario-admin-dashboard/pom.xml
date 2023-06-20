@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>io.lombocska</groupId>
-    <artifactId>admin-dashboard</artifactId>
+    <artifactId>scenario-admin-dashboard</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>admin-dashboard</name>
     <description>admin-dashboard</description>

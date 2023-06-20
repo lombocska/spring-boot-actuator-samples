@@ -15,9 +15,9 @@ spring:
   session:
     store-type: jdbc
     jdbc.initialize-schema: always
-  boot:
-    admin:
-      client.url: http://localhost:8085
+#  boot:
+#    admin:
+#      client.url: http://localhost:8085
 server:
   port: 8080
 

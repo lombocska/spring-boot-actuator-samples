@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>io.lombocska</groupId>
-    <artifactId>metrics-w-graphite</artifactId>
+    <artifactId>scenario-metrics-w-graphite</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>metrics-w-graphite</name>
     <description>metrics-w-graphite</description>

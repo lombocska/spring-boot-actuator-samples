@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>io.lombocska</groupId>
-    <artifactId>actuator-w-security</artifactId>
+    <artifactId>scenario-actuator-w-security</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>actuator-w-security</name>
     <description>actuator-w-security</description>
